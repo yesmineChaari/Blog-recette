@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,24 +23,25 @@
 
     <div class="container">
         <h1>Contact Me</h1>
-        <form action="mail.php" method="POST">
+        <form action="mail.php" method="post">
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" >
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" >
             </div>
             <div class="form-group">
                 <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
+                <input type="text" id="subject" name="subject">
             </div>
             <div class="form-group">
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message"></textarea>
             </div>
-            <button type="submit">Send Message</button>
+            <button type="submit" name="btn-sent">Send Message</button>
+
         </form>
     </div>
 </body>

@@ -1,18 +1,43 @@
 <?php
-if(isset($_POST['email']) && isset($_POST['name'] )&& isset($_POST['subject']) && isset($_POST['message'])){
-    $mail_from=$_POST['email'];
-    $to_email = "chaari.yasmine.plus@gmail.com";
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-    $name = $_POST['name'];
-    ini_set("SMTP", "mail.example.com");
-ini_set("smtp_port", "587");
-    $headers = "content-type: text/plain; charset=UTF-8" . "\r\n" . "From: ".$mail_from . "\r\n" . "Reply-To: ".$mail_from . "\r\n" . "reply-to" . $mail_from . "\r\n" . "X-Mailer: PHP/" . phpversion();
-    if( mail($to_email, $subject, $message, $headers)){
-        include("emailSent.php");
-
-    }
-    else {include("errorPage.php");}
+if(empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["subject"]) || empty($_POST["message"])){
+    header("Location: errorPage.php");
+    exit();
 }
-else{include("errorPage.php");}
+
+
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
+    require "vendor/autoload.php";
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+
+
+
+    $mail = new PHPMailer(true);
+
+
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->Username = "yasminechaari2004@gmail.com";
+    $mail->Password = "yzwi uiwo ohxy egxm";
+
+    $mail->setFrom($email, $name);
+    $mail->addAddress("chaari.yasmine@plus.gmail.com", "yummy recipe");
+
+    $mail->Subject = $subject;
+    $mail->Body = $message . "\n\nReply to: " . $email;
+
+    $mail->send();
+
+    header("Location: emailSent.php");
+exit();
 ?>
