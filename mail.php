@@ -31,7 +31,7 @@ if(empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["subject"]) |
     $mail->Password = "yzwi uiwo ohxy egxm";
 
     $mail->setFrom($email, $name);
-    $mail->addAddress("chaari.yasmine@plus.gmail.com", "yummy recipe");
+    $mail->addAddress("chaari.yasmine.plus@gmail.com", "yummy recipe");
 
     $mail->Subject = $subject;
     $mail->Body = $message . "\n\nReply to: " . $email;

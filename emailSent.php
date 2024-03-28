@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Email Sent Successfully</h1>
         <p>Thank you for contacting us. Your email has been sent successfully.</p>
-        <a href="home.php" class="btn">Go back to Home Page</a>
+        <a href="Home.php" class="btn">Go back to Home Page</a>
     </div>
 </body>
 </html>
