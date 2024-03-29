@@ -1,30 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delicious Recipes</title>
- 
-    <link rel="stylesheet" href="RecipeCardStyles.css" />
-    <link rel="stylesheet" href="HeaderStyles.css" />
-    <link rel="stylesheet" href="slideShow.css" />
-       
+    <title>HOMY</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="homy.css" />
   </head>
-  <body>
-    <header>
-      <h1>Yummy Recipe</h1>
-      <nav>
-        <ul>
-          <li><a href="home.php" class="active">Home</a></li>
-          <li><a href="contactUs.php">Contact Us</a></li>
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#">Sign Up</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <main>
-          <section class="mySlides">
+  <body>
+    
+
+    <section class="mySlides">
       <div class="slideshow-container">
         <div class="slideContent">
           <div
@@ -36,7 +21,7 @@
               src="images/img1 (1).jpg"
               style="margin-left: 15%;"
             />
-            <div class="text translate">VIBRANT<br />& WHOLESOME</div>
+            <div class="text translate">Vibrant<br />& Wholesome</div>
           </div>
           <div class="description">
             <div class="intro">
@@ -47,7 +32,12 @@
             <p class="descriptionText">
              Dive into a world of vibrant flavors and wholesome ingredients with our collection of recipes, designed to nourish your body and delight your senses.
             </p>
-
+            <a
+              class="shopnow"
+              href="file:///C:/Users/Karim/Desktop/stage/HOMY/shop.html"
+            >
+              Shop Now
+            </a>
           </div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -73,6 +63,7 @@
             <p class="descriptionText">
               Experience the satisfaction of a well-rounded meal bursting with freshness, as our recipes provide a delicious blend of flavors and nutritious ingredients to leave you feeling revitalized.
             </p>
+            <a class="shopnow" href=""> Shop Now </a>
           </div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -102,7 +93,7 @@
             <p class="descriptionText">
              Our recipes strike the perfect balance between flavor and nourishment, ensuring each bite is both delicious and packed with essential nutrients for your well-being.
             </p>
-
+            <a class="shopnow" href=""> Shop Now </a>
           </div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -110,18 +101,7 @@
       </div>
     </section>
 
-
-    
-<?php
-      require_once("getRecipes.php");
-      getMainPosts();
-      ?>
-
-    </main>
-
-
-  </body>
-  <footer>
+    <footer>
       <div class="footer-container">
         <div class="footer-icons">
           <img src="images/instagram.png" alt="ig" class="footer-icon" />
@@ -133,5 +113,5 @@
       </div>
     </footer>
     <script src="homy.js"></script>
-
+  </body>
 </html>

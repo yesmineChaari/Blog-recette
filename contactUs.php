@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    
     <link rel="stylesheet" href="contactUsStyles.css">
     <link rel="stylesheet" href="headerStyles.css">
+
+    <link rel="stylesheet" href="slideShow.css">
 </head>
 <body>
-     <header>
-      <h1>Yummy Recipe</h1>
+    <header>
+    <h1>Yummy Recipe</h1>
       <nav>
         <ul>
           <li><a href="home.php" class="active">Home</a></li>
@@ -22,7 +25,7 @@
     </header>
 
     <div class="container">
-        <h1>Contact Me</h1>
+        <h1 class="title">Contact Us</h1>
         <form action="mail.php" method="post">
             <div class="form-group">
                 <label for="name">Name:</label>

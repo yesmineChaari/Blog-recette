@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header h1 {
+  margin: 0;
+  color: #c65e31;
+  font-family: "Brush Script MT", cursive;
+  font-size: 45px;
+}
+
+header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a.active {
+  color: #c65e31;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li a {
+  border: 2px solid transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  border-color: #c65e31;
+  color: #c65e31;
+}
+
+.main-container {
+  padding: 20px;
+}
+
+.recipe-details {
+  padding: 20px;
+}
+
+.recipe-title {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.recipe-description {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.ingredients {
+  list-style-type: none;
+  padding: 0;
+}
+
+.ingredients li {
+  margin-bottom: 5px;
+}
+
+.recipe-button {
+  background-color: #c65e31;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-button:hover {
+  background-color: #aa4b22;
+}
+
+.recipe-added {
+  font-style: italic;
+  color: #777;
+}

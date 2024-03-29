@@ -1,20 +1,26 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+  margin: 0px 100px 0px 100px;
   padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f3efef;
+}
+body {
+  font-family: "Courier New", Courier, monospace;
 }
 
 header h1 {
   margin: 0;
   color: #c65e31;
-  font-family: "Brush Script MT", cursive;
+  font-family: "Brush Script MT";
+  letter-spacing: 2px;
   font-size: 45px;
 }
 
 header {
-  background-color: #f8f9fa;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f3efef;
+  padding: 20px 100px 20px 100px;
+  margin: 25px 100px 10px 100px;
+  border-bottom: 1px solid #cdcdcd;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +49,8 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  font-family: "Courier New", Courier, monospace;
+  color: #2b4450;
   font-weight: bold;
 }
 
@@ -56,7 +63,8 @@ nav ul li:last-child {
 }
 
 nav {
-  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
   text-align: right;
 }
 
