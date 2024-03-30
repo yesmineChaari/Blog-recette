@@ -10,7 +10,7 @@ function getMainPosts(){
     try {
         $db= new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = "SELECT * FROM recipe ORDER BY date DESC LIMIT 20";
+        $query = "SELECT * FROM recipe ORDER BY date ";
         $result = $db->query($query);
         while($row=$result->fetch(PDO::FETCH_ASSOC)){
             $timestamp = strtotime($row['date']);
@@ -54,7 +54,7 @@ try {
         <h3>Ingredients</h3>
         <ul class="ingredients">';
     // Explode ingredients and display as list items
-    $ingredients = explode(',', $recipe_details['ingredients']);
+    $ingredients = explode(',', $recipe_details['Ingredients']);
     foreach ($ingredients as $ingredient) {
         echo '<li>' . $ingredient . '</li>';
     }
@@ -67,10 +67,7 @@ try {
         echo '<li>' . $step . '</li>';
     }
     echo '</ol>';
-    
 
-    echo '<link rel="stylesheet" type="text/css" href="recipeDetails.css">
-    <a href="Home.php" class="button">Return to Home</a>';
 
     echo '</div>';
 
@@ -82,4 +79,5 @@ try {
 }
 
 ?>
+
 

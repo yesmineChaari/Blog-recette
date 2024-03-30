@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delicious Recipes</title>
  
-    <link rel="stylesheet" href="RecipeCardStyles.css" />
-    <link rel="stylesheet" href="HeaderStyles.css" />
-    <link rel="stylesheet" href="slideShow.css" />
+    <link rel="stylesheet" href="/commun files/RecipeCardStyles.css" />
+    <link rel="stylesheet" href="/commun files/HeaderStyles.css" />
+    <link rel="stylesheet" href="/commun files/slideShow.css" />
+    <link rel="stylesheet" href="/commun files/footer.css" />
        
   </head>
   <body>
@@ -17,8 +18,8 @@
         <ul>
           <li><a href="home.php" class="active">Home</a></li>
           <li><a href="contactUs.php">Contact Us</a></li>
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#">Sign Up</a></li>
+          <li><a href="signIn.php">Sign In</a></li>
+          <li><a href="signUp.html">Sign Up</a></li>
         </ul>
       </nav>
     </header>
@@ -33,7 +34,7 @@
           >
             <img
               class="fade"
-              src="images/img1 (1).jpg"
+              src="/images/img1 (1).jpg"
               style="margin-left: 15%;"
             />
             <div class="text translate">VIBRANT<br />& WHOLESOME</div>
@@ -61,7 +62,7 @@
             class="img+title"
             style="width: 35%; margin-left: 15%; margin-bottom: 10%;"
           >
-            <img class="fade" src="images/img2 (1).jpg" style="margin-left: 15%;" />
+            <img class="fade" src="/images/img2 (1).jpg" style="margin-left: 15%;" />
             <div class="text translate">Satisfying<br />& Fresh</div>
           </div>
           <div class="description">
@@ -88,7 +89,7 @@
           >
             <img
               class="fade"
-              src="images/img4 (1).jpg"
+              src="/images/img4 (1).jpg"
               style="margin-left: 15%;"
             />
             <div class="text translate">Delicious <br />& Nutritious</div>
@@ -113,7 +114,7 @@
 
     
 <?php
-      require_once("getRecipes.php");
+      require_once("GetRecipes.php");
       getMainPosts();
       ?>
 
@@ -124,14 +125,14 @@
   <footer>
       <div class="footer-container">
         <div class="footer-icons">
-          <img src="images/instagram.png" alt="ig" class="footer-icon" />
-          <img src="images/facebook.png" alt="fb" class="footer-icon" />
-          <img src="images/youtube.png" alt="yt" class="footer-icon" />
-          <img src="images/twitter.png" alt="tw" class="footer-icon" />
+          <img src="/images/instagram.png" alt="ig" class="footer-icon" />
+          <img src="/images/facebook.png" alt="fb" class="footer-icon" />
+          <img src="/images/youtube.png" alt="yt" class="footer-icon" />
+          <img src="/images/twitter.png" alt="tw" class="footer-icon" />
         </div>
         <h1 class="copyrights">Copyrights © 2024 All Rights Reserved. YUMMY RECIPE.</h1>
       </div>
-    </footer>
-    <script src="homy.js"></script>
+    </footer>    
+    <script src="/commun files/home.js"></script>
 
 </html>

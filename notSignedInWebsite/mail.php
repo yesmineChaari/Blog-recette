@@ -1,6 +1,6 @@
 <?php
 if(empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["subject"]) || empty($_POST["message"])){
-    header("Location: errorPage.php");
+    header("Location: /contactUs/errorPage.php");
     exit();
 }
 
@@ -38,6 +38,6 @@ if(empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["subject"]) |
 
     $mail->send();
 
-    header("Location: emailSent.php");
+    header("Location: /contactUs/emailSent.php");
 exit();
 ?>

@@ -1,0 +1,17 @@
+main {
+  font-family: "Courier New", Courier, monospace;
+  padding-top: 30px;
+}
+.recipe-title {
+  font-family: Times, serif;
+  font-weight: bolder;
+
+  color: #2b4450;
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 33px;
+}
+
+h3 {
+  color: #497285;
+}

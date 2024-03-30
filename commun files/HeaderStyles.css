@@ -14,16 +14,20 @@ header h1 {
   font-family: "Brush Script MT";
   letter-spacing: 2px;
   font-size: 45px;
+  font-weight: lighter;
 }
 
 header {
   background-color: #f3efef;
   padding: 20px 100px 20px 100px;
-  margin: 25px 100px 10px 100px;
+  /*margin: 25px 100px 10px 100px;*/
   border-bottom: 1px solid #cdcdcd;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .header-container {
@@ -54,10 +58,6 @@ nav ul li a {
   font-weight: bold;
 }
 
-nav ul li a.active {
-  color: #c65e31;
-}
-
 nav ul li:last-child {
   margin-right: 0;
 }
@@ -69,12 +69,10 @@ nav {
 }
 
 nav ul li a {
-  border: 2px solid transparent;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 5px 8px;
 }
 
 nav ul li a:hover {
-  border-color: #c65e31;
+  border-color: none;
   color: #c65e31;
 }

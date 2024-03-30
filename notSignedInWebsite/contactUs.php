@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    
-    <link rel="stylesheet" href="contactUsStyles.css">
-    <link rel="stylesheet" href="headerStyles.css">
-
-    <link rel="stylesheet" href="slideShow.css">
+    <link rel="stylesheet" href="/commun files/contactUsStyles.css">
+    <link rel="stylesheet" href="/commun files/HeaderStyles.css">
+    <link rel="stylesheet" href="/commun files/slideShow.css">
+    <link rel="stylesheet" href="/commun files/footer.css">
 </head>
 <body>
     <header>
@@ -18,8 +17,8 @@
         <ul>
           <li><a href="home.php" class="active">Home</a></li>
           <li><a href="contactUs.php">Contact Us</a></li>
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#">Sign Up</a></li>
+          <li><a href="signIn.php">Sign In</a></li>
+          <li><a href="signUp.html">Sign Up</a></li>
         </ul>
       </nav>
     </header>
@@ -47,5 +46,17 @@
 
         </form>
     </div>
+
 </body>
+  <footer>
+      <div class="footer-container">
+        <div class="footer-icons">
+          <img src="/images/instagram.png" alt="ig" class="footer-icon" />
+          <img src="/images/facebook.png" alt="fb" class="footer-icon" />
+          <img src="/images/youtube.png" alt="yt" class="footer-icon" />
+          <img src="/images/twitter.png" alt="tw" class="footer-icon" />
+        </div>
+        <h1 class="copyrights">Copyrights © 2024 All Rights Reserved. YUMMY RECIPE.</h1>
+      </div>
+    </footer>
 </html>
