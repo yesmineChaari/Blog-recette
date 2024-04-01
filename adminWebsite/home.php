@@ -14,14 +14,14 @@
       <h1>Yummy Recipe</h1>
       <nav>
         <ul>
-          <li><a href="home.php" class="active">Home</a></li>
+          <li><a href="Home.php" class="active">Home</a></li>
           <li><a href="contactUs.html">Contact Us</a></li>
-          <li><a href="signIn.php">Sign In</a></li>
-          <li><a href="signUp.html">Sign Up</a></li>
+          <li><a href="viewProfile.php">View Profile</a></li>
+          <li><a href="addRecipe.php">Add Recipe</a></li>
+          <li><a href="/signedInWebsite/logOut.php">Log out</a></li>
         </ul>
       </nav>
     </header>
-
     <main>
           <section class="mySlides">
       <div class="slideshow-container">
@@ -108,11 +108,8 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
     </section>
-
-
-    
 <?php
-      require_once("GetRecipes.php");
+      require_once("getRecipesSignedIn.php");
       getMainPosts();
       ?>
 
@@ -130,7 +127,7 @@
         </div>
         <h1 class="copyrights">Copyrights © 2024 All Rights Reserved. YUMMY RECIPE.</h1>
       </div>
-    </footer>    
+    </footer>
     <script src="/commun files/home.js"></script>
 
 </html>

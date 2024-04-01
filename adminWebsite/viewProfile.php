@@ -33,27 +33,29 @@ $mysqli->close();
     <link rel="stylesheet" href="/commun files/contactUsStyles.css" />
     <link rel="stylesheet" href="/commun files/slideShow.css" />
     <link rel="stylesheet" href="/commun files/footer.css" />
-    <link rel="stylesheet" href="profileStyles.css" />
+    <link rel="stylesheet" href="/signedInWebsite/profileStyles.css" />
 </head>
 <body>
     <header>
         <h1>Yummy Recipe</h1>
         <nav>
             <ul>
-                <li><a href="homeSignedIn.php" class="active">Home</a></li>
-                <li><a href="contactUsSignedIn.html">Contact Us</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="logOut.php">Sign Out</a></li>
+                <li><a href="home.php" class="active">Home</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+                <li><a href="#">View Profile</a></li>
+                <li><a href="addRecipe.php">Add Recipe</a></li>
+                <li><a href="/signedInWebsite/logOut.php">Sign Out</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
         <img src="/images/user (2).png" alt="user" class="user-icon"/>
+        <p><strong>ADMIN</strong></p>
         <p class="user-name"><?php echo $userName; ?></p>
         <p><strong>Bio:</strong> <?php echo $bio; ?></p>
         <p><strong>Email:</strong> <?php echo $userEmail ?></p>
-        <a href="logout.php" class="logout-button">Log out</a>
+        <a href="/signedInWebsite/logOut.php" class="logout-button">Log out</a>
     </div>
 
     <footer>

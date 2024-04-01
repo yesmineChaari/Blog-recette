@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delicious Recipes</title>
- 
     <link rel="stylesheet" href="/commun files/RecipeCardStyles.css" />
     <link rel="stylesheet" href="/commun files/HeaderStyles.css" />
     <link rel="stylesheet" href="/commun files/slideShow.css" />
     <link rel="stylesheet" href="/commun files/footer.css" />
-       
   </head>
   <body>
     <header>
@@ -17,13 +15,12 @@
       <nav>
         <ul>
           <li><a href="HomeSignedIn.php" class="active">Home</a></li>
-          <li><a href="contactUsSIgnedIn.php">Contact Us</a></li>
-          <li><a href="#">View Profile</a></li>
+          <li><a href="contactUsSIgnedIn.html">Contact Us</a></li>
+          <li><a href="viewProfile.php">View Profile</a></li>
           <li><a href="logOut.php">Log out</a></li>
         </ul>
       </nav>
     </header>
-
     <main>
           <section class="mySlides">
       <div class="slideshow-container">
@@ -46,7 +43,7 @@
               <h2>WHERE EVERY RECIPE TELLS A STORY</h2>
             </div>
             <p class="descriptionText">
-             Dive into a world of vibrant flavors and wholesome ingredients with our collection of recipes, designed to nourish your body and delight your senses.
+            Dive into a world of vibrant flavors and wholesome ingredients with our collection of recipes, designed to nourish your body and delight your senses.
             </p>
 
           </div>
@@ -101,7 +98,7 @@
               <h2>WHERE EVERY RECIPE TELLS A STORY</h2>
             </div>
             <p class="descriptionText">
-             Our recipes strike the perfect balance between flavor and nourishment, ensuring each bite is both delicious and packed with essential nutrients for your well-being.
+            Our recipes strike the perfect balance between flavor and nourishment, ensuring each bite is both delicious and packed with essential nutrients for your well-being.
             </p>
 
           </div>
@@ -110,10 +107,6 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
     </section>
-
-
-
-    
 <?php
       require_once("getRecipesSignedIn.php");
       getMainPosts();

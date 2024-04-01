@@ -22,7 +22,7 @@ function getMainPosts(){
                     </div>
                     <p class="descriptionRecipe">'.$row['dishDescription'].'</p>
                 
-                    <a href="view_recipe.php" class="recipe-button">View Recipe</a>
+                    <a href="view_recipe.php?recipe_id='.$row['id'].'" class="recipe-button">View Recipe</a>
 
                     </div>';
         }

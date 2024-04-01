@@ -1,12 +1,12 @@
 <?php
- $host = "localhost";
+$host = "localhost";
     $dbname = "recipe_blog";
     $username = "yasmine";
     $password = "chaari123??";
     if (empty($_POST["name"])) {
     die("Name is required");
 }
-
+//validity of email and password
 if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     die("Valid email is required");
 }
@@ -31,7 +31,7 @@ $mysqli = new mysqli($host, $username, $password, $dbname);
 if ($mysqli->connect_errno) {
             die("Failed to connect to MySQL: " . $mysqli->connect_error);
 }
-
+//check if email is unique 
 $email = $_POST["email"];
 $check_email_query = "SELECT COUNT(*) as count FROM user WHERE userEmail = ?";
 $stmt_check_email = $mysqli->prepare($check_email_query);
@@ -41,16 +41,13 @@ $result = $stmt_check_email->get_result();
 $row = $result->fetch_assoc();
 $email_count = $row['count'];
 
-// If email already exists, terminate script and display error message
 if ($email_count > 0) {
     die("Email already exists");
 }
 
 $sql = "INSERT INTO user (userName, userEmail, password, bio)
         VALUES (?, ?, ?, ?)";
-        
 $stmt = $mysqli->stmt_init();
-
 if ( ! $stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
@@ -60,7 +57,6 @@ if ($stmt->execute()) {
 } else {
     die("Error: " . $stmt->error);
 }
-
 $stmt->close();
 $mysqli->close();
 ?>

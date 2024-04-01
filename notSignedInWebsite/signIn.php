@@ -1,33 +1,32 @@
 <?php
 $is_invalid = false;
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
     $host = "localhost";
     $dbname = "recipe_blog";
     $username = "yasmine";
     $password = "chaari123??";
     $mysqli = new mysqli($host, $username, $password, $dbname);
     
-    $sql = sprintf("SELECT * FROM user
-                    WHERE userEmail = '%s'",
-                    $mysqli->real_escape_string($_POST["email"]));
-    
+    $email = $mysqli->real_escape_string($_POST["email"]);
+    $sql = sprintf("SELECT * FROM user WHERE userEmail = '%s'", $email);
     $result = $mysqli->query($sql);
     $user = $result->fetch_assoc();
     if ($user) {
-        
         if ($_POST["password"] === $user["password"]) {
             session_start();
             session_regenerate_id();
             $_SESSION["user_id"] = $user["id"];
+            if ($user["admin"] == 1)
+            {
+                header("Location: /adminWebsite/home.php");
+                exit;
+            }
             header("Location: /signedInWebsite/homeSignedIn.php");
             exit;
         }
     }
     $is_invalid = true;
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,17 +36,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <link rel="stylesheet" href="/commun files/HeaderStyles.css" />
     <link rel="stylesheet" href="/commun files/contactUsStyles.css" />
-    <link rel="stylesheet" href="/commun files/slideShow.css" />
     <link rel="stylesheet" href="/commun files/footer.css" />
+    <link rel="stylesheet" href="sign.css" />
 </head>
 <body>
-     <header>
+  <header>
       <h1>Yummy Recipe</h1>
       <nav>
         <ul>
           <li><a href="home.php" class="active">Home</a></li>
-          <li><a href="contactUs.php">Contact Us</a></li>
-          <li><a href="#">Sign In</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+          <li><a href="qignIn.php">Sign In</a></li>
           <li><a href="signUp.html">Sign Up</a></li>
         </ul>
       </nav>
@@ -64,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="form-group">
         <label for="email">email</label>
         <input type="email" name="email" id="email"
-               value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
+            value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
             </div>
         <div class="form-group">
         <label for="password">Password</label>
@@ -72,10 +71,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         
         <button>Log in</button>
-        <a href="signUp.html">Don't have an account ?Sign up</a>
+        <a href="signUp.html" class="link">Don't have an account ?Sign up</a>
     </form>
     </div>
-     <footer>
+    <footer>
     <div class="footer-container">
       <div class="footer-icons">
         <img src="/images/instagram.png" alt="ig" class="footer-icon" />

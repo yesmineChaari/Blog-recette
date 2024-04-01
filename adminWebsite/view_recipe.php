@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +13,10 @@
         <h1>Yummy Recipe</h1>
         <nav>
             <ul>
-                <li><a href="homeSignedIn.php">Home</a></li>
-                <li><a href="contactUsSignedIn.html">Contact us</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="contactUs.html">Contact us</a></li>
                 <li><a href="viewProfile.php">View Profile</a></li>
-                <li><a href="logOut.php">Log out</a></li>
+                <li><a href="/signedInWebsite/logOut.php">Log out</a></li>
 
             </ul>
         </nav>
@@ -28,11 +27,10 @@
         require_once("GetRecipesSignedIn.php");
         if(isset($_GET['recipe_id'])) {
             $recipe_id = $_GET['recipe_id'];
-            getRecipeDetails($recipe_id);
+            $recipe_details = getRecipeDetails($recipe_id);
             if($recipe_details) {
-                echo '
-                <div class="recipe-details">
-                <h2 class="recipe-title ">' . $recipe_details['dishName'] . '</h2>
+                echo '<div class="recipe-details">
+                <h2 class="recipe-title">' . $recipe_details['dishName'] . '</h2>
                 <h3>Description</h3>
                 <p class="description">' . $recipe_details['dishDescription'] . '</p>
                 <h3>Ingredients</h3>
