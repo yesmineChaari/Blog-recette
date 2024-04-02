@@ -3,7 +3,7 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION["user_id"])) {
-    header("Location: signIn.php");
+    header("Location: /notSignedInWebsite/signIn.php");
     exit;
 }
 
@@ -30,8 +30,6 @@ $mysqli->close();
     <title>Profile</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/commun files/HeaderStyles.css" />
-    <link rel="stylesheet" href="/commun files/contactUsStyles.css" />
-    <link rel="stylesheet" href="/commun files/slideShow.css" />
     <link rel="stylesheet" href="/commun files/footer.css" />
     <link rel="stylesheet" href="profileStyles.css" />
 </head>
@@ -42,7 +40,7 @@ $mysqli->close();
             <ul>
                 <li><a href="homeSignedIn.php" class="active">Home</a></li>
                 <li><a href="contactUsSignedIn.html">Contact Us</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="#">View Profile</a></li>
                 <li><a href="logOut.php">Sign Out</a></li>
             </ul>
         </nav>

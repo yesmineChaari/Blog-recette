@@ -24,30 +24,12 @@
     </header>
 
     <main>
-        <?php
+         <?php
         require_once("GetRecipesSignedIn.php");
         if(isset($_GET['recipe_id'])) {
             $recipe_id = $_GET['recipe_id'];
             getRecipeDetails($recipe_id);
-            if($recipe_details) {
-                echo '
-                <div class="recipe-details">
-                <h2 class="recipe-title ">' . $recipe_details['dishName'] . '</h2>
-                <h3>Description</h3>
-                <p class="description">' . $recipe_details['dishDescription'] . '</p>
-                <h3>Ingredients</h3>
-                <ul class="ingredients">
-                ';
-                foreach($recipe_details['ingredients'] as $ingredient) {
-                    echo '<li>' . $ingredient. '</li>';
-                }
-                echo '</ul>
-                <h3>Steps</h3>
-                <p class="steps">' . $recipe_details['steps'] . '</p>
-                <p class="recipe-added">' . $recipe_details['date'] . '</p>
-                </div>';
-            }
-                                }
+        }
         ?>
     </main>
     <footer>

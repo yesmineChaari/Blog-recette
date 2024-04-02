@@ -7,7 +7,7 @@ if(empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["subject"]) |
     $email = $_POST["email"];
     $subject = $_POST["subject"];
     $message = $_POST["message"];
-    require "vendor/autoload.php";
+    require "../vendor/autoload.php";
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     $mail = new PHPMailer(true);

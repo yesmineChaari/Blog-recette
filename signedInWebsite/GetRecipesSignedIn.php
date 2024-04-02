@@ -22,7 +22,7 @@ function getMainPosts(){
                     </div>
                     <p class="descriptionRecipe">'.$row['dishDescription'].'</p>
                 
-                    <a href="view_recipe.php" class="recipe-button">View Recipe</a>
+                    <a href="view_recipe.php?recipe_id='.$row['id'].'" class="recipe-button">View Recipe</a>
 
                     </div>';
         }
@@ -54,7 +54,7 @@ try {
         <h3>Ingredients</h3>
         <ul class="ingredients">';
 
-    $ingredients = explode(',', $recipe_details['Ingredients']);
+    $ingredients = explode(',', $recipe_details['ingredients']);
     foreach ($ingredients as $ingredient) {
         echo '<li>' . $ingredient . '</li>';
     }

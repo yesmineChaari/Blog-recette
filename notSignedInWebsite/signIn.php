@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" href="/commun files/HeaderStyles.css" />
     <link rel="stylesheet" href="/commun files/contactUsStyles.css" />
     <link rel="stylesheet" href="/commun files/footer.css" />
@@ -45,8 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <nav>
         <ul>
           <li><a href="home.php" class="active">Home</a></li>
-          <li><a href="contactUs.html">Contact Us</a></li>
-          <li><a href="qignIn.php">Sign In</a></li>
+          <li><a href="signIn.php">Sign In</a></li>
           <li><a href="signUp.html">Sign Up</a></li>
         </ul>
       </nav>

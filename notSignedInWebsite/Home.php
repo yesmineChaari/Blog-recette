@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delicious Recipes</title>
+    <title>Yummy Recipe</title>
     <link rel="stylesheet" href="/commun files/RecipeCardStyles.css" />
     <link rel="stylesheet" href="/commun files/HeaderStyles.css" />
     <link rel="stylesheet" href="/commun files/slideShow.css" />
@@ -15,7 +15,6 @@
       <nav>
         <ul>
           <li><a href="home.php" class="active">Home</a></li>
-          <li><a href="contactUs.html">Contact Us</a></li>
           <li><a href="signIn.php">Sign In</a></li>
           <li><a href="signUp.html">Sign Up</a></li>
         </ul>
