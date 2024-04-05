@@ -25,7 +25,7 @@
 
     <div class="container">
       <h1 class="title">Add Recipe</h1>
-      <form action="add-process.php" method="post">
+      <form action="add-process.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="name">Recipe name :</label>
           <input type="text" id="name" name="name" />
@@ -42,7 +42,15 @@
           <label for="steps">Steps :</label>
           <input type="text" id="steps" name="steps" />
         </div>
-        <button type="submit" name="btn-sent">Submit</button>
+        <div class="form-group">
+          <label for="imgName">image name :</label>
+          <input type="text" id="imgName" name="imgName" />
+        </div>
+        <div class="form-group">
+      <label for="image">Image :</label>
+      <input type="file" id="image" name="image" accept="image/*" />
+    </div>
+        <button type="submit" name="btn-sent" value="Upload">Submit</button>
       </form>
     </div>
   </body>

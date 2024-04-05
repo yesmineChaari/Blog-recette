@@ -111,7 +111,7 @@
 
     
 <?php
-      require_once("GetRecipes.php");
+      require_once("../commun files/GetRecipes.php");
       getMainPosts();
       ?>
 

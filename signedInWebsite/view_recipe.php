@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Details</title>
     <link rel="stylesheet" href="/commun files/footer.css" />
-    <link rel="stylesheet" href="viewRecipeStyles.css" />
+    <link rel="stylesheet" href="/commun files/viewRecipeStyles.css" />
     <link rel="stylesheet" href="/commun files/HeaderStyles.css" />
 </head>
 <body>

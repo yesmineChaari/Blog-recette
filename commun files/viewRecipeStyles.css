@@ -1,0 +1,42 @@
+main {
+  font-family: "Courier New", Courier, monospace;
+  padding-top: 30px;
+}
+.recipe-title {
+  font-family: Times, serif;
+  font-weight: bolder;
+  color: #2b4450;
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 33px;
+}
+
+h3 {
+  color: #497285;
+}
+.recipe-image {
+  float: left;
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* Ensure that the image covers the entire container */
+  margin-bottom: 20px;
+  border-radius: 7px;
+}
+
+.recipe-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+.recipe-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 25px 300px 10px 300px;
+}

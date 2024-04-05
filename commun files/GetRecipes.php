@@ -16,15 +16,16 @@ function getMainPosts(){
             $timestamp = strtotime($row['date']);
             $date = date('d-m-Y', $timestamp);
             echo '<div class="recipe-card">
+            <img class="recipe-image" src="../images/'.$row['dishImage'].'" alt="recipe image">
+            <div class="card-body">
                     <div class="card-header"> 
                         <h2 class="recipe-title">'.$row['dishName'].'</h2>
                         <p class="recipe-added">'.$date.'</p>
                     </div>
                     <p class="descriptionRecipe">'.$row['dishDescription'].'</p>
-                
                     <a href="#" class="recipe-button">Sign in to view recipe</a>
-
-                    </div>';
+            </div>
+            </div>';
         }
     } catch(PDOException $e) {
         echo "Failed to connect to the database: " . $e->getMessage();

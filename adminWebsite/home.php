@@ -109,7 +109,7 @@
       </div>
     </section>
 <?php
-      require_once("getRecipesSignedIn.php");
+      require_once("../signedInWebsite/GetRecipesSignedIn.php");
       getMainPosts();
       ?>
 
