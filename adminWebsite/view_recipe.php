@@ -28,7 +28,7 @@
         require_once("../signedInWebsite/GetRecipesSignedIn.php");
         if(isset($_GET['recipe_id'])) {
             $recipe_id = $_GET['recipe_id'];
-            $recipe_details = getRecipeDetails($recipe_id);
+            getRecipeDetails($recipe_id);
         }
         ?>
     </main>
