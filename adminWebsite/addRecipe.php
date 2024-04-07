@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION["user_id"])) {
+    header("Location: ../notSignedInWebsite/signIn.php");
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +30,7 @@
           <li><a href="contactUs.html">Contact Us</a></li>
           <li><a href="viewProfile.php">View Profile</a></li>
             <li><a href="addRecipe.php">Add Recipe</a></li>
-          <li><a href="/signedInWebsite/logOut.php">Log out</a></li>
+          <li><a href="/signedInWebsite/logOut.php">Log Out</a></li>
         </ul>
       </nav>
     </header>
@@ -42,9 +54,9 @@
           <label for="steps">Steps :</label>
           <input type="text" id="steps" name="steps" />
         </div>
-        <div class="form-group">
-          <label for="imgName">image name :</label>
-          <input type="text" id="imgName" name="imgName" />
+        <div class="category">
+          <label for="categories">Categories :</label>
+          <input type="text" id="categories" name="categories" />
         </div>
         <div class="form-group">
       <label for="image">Image :</label>
@@ -57,10 +69,10 @@
   <footer>
     <div class="footer-container">
       <div class="footer-icons">
-        <img src="images/instagram.png" alt="ig" class="footer-icon" />
-        <img src="images/facebook.png" alt="fb" class="footer-icon" />
-        <img src="images/youtube.png" alt="yt" class="footer-icon" />
-        <img src="images/twitter.png" alt="tw" class="footer-icon" />
+        <img src="/images/instagram.png" alt="ig" class="footer-icon" />
+        <img src="/images/facebook.png" alt="fb" class="footer-icon" />
+        <img src="/images/youtube.png" alt="yt" class="footer-icon" />
+        <img src="/images/twitter.png" alt="tw" class="footer-icon" />
       </div>
       <h1 class="copyrights">
         Copyrights © 2024 All Rights Reserved. YUMMY RECIPE.

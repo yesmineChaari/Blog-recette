@@ -14,10 +14,10 @@
         <nav>
             <ul>
                 <li><a href="home.php">Home</a></li>
-                <li><a href="contactUs.html">Contact us</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
                 <li><a href="viewProfile.php">View Profile</a></li>
                 <li><a href="addRecipe.php">Add Recipe</a></li>
-                <li><a href="/signedInWebsite/logOut.php">Log out</a></li>
+                <li><a href="/signedInWebsite/logOut.php">Log Out</a></li>
 
             </ul>
         </nav>

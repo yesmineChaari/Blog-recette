@@ -3,7 +3,7 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION["user_id"])) {
-    header("Location: signIn.php");
+    header("Location: ../notSignedInWebsite/signIn.php");
     exit;
 }
 
@@ -42,9 +42,9 @@ $mysqli->close();
             <ul>
                 <li><a href="home.php" class="active">Home</a></li>
                 <li><a href="contactUs.html">Contact Us</a></li>
-                <li><a href="#">View Profile</a></li>
+                <li><a href="viewProfile.php">View Profile</a></li>
                 <li><a href="addRecipe.php">Add Recipe</a></li>
-                <li><a href="/signedInWebsite/logOut.php">Sign Out</a></li>
+                <li><a href="/signedInWebsite/logOut.php">Log Out</a></li>
             </ul>
         </nav>
     </header>

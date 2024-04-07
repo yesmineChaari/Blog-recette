@@ -33,10 +33,29 @@ h3 {
   flex-direction: column;
   justify-content: flex-start;
   margin-left: 20px;
+  font-weight: bold;
 }
 .recipe-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 25px 300px 10px 300px;
+  font-weight: bold;
+}
+.download_button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 300px;
+  margin-right: 300px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+
+  color: #c65e31;
+  font-size: large;
+  font-weight: bold;
+}
+.download_button:hover {
+  color: #497285;
+  text-decoration: underline;
 }

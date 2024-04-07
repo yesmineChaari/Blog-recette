@@ -19,8 +19,7 @@ header h1 {
 
 header {
   background-color: #f3efef;
-  padding: 20px 100px 20px 100px;
-  /*margin: 25px 100px 10px 100px;*/
+  padding: 20px 40px 20px 40px;
   border-bottom: 1px solid #cdcdcd;
   display: flex;
   justify-content: space-between;
@@ -48,7 +47,7 @@ nav ul {
 
 nav ul li {
   display: inline;
-  margin-right: 20px;
+  margin-right: 5px; /* Decreased margin to make them closer */
 }
 
 nav ul li a {
@@ -69,10 +68,37 @@ nav {
 }
 
 nav ul li a {
-  padding: 5px 8px;
+  padding: 5px 5px;
 }
 
 nav ul li a:hover {
   border-color: none;
   color: #c65e31;
+}
+.search-form {
+  padding-top: 5px;
+}
+.search-form input[type="text"] {
+  border: 1px solid #767676;
+  background-color: #f3efef;
+
+  margin-right: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 300px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.search-form button {
+  background-color: #f3efef;
+  color: #c65e31;
+  border: none;
+
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+.search-form button:hover {
+  color: #2b4450;
 }

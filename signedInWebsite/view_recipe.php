@@ -15,9 +15,9 @@
         <nav>
             <ul>
                 <li><a href="homeSignedIn.php">Home</a></li>
-                <li><a href="contactUsSignedIn.html">Contact us</a></li>
+                <li><a href="contactUsSignedIn.html">Contact Us</a></li>
                 <li><a href="viewProfile.php">View Profile</a></li>
-                <li><a href="logOut.php">Log out</a></li>
+                <li><a href="logOut.php">Log Out</a></li>
 
             </ul>
         </nav>

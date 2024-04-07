@@ -9,9 +9,17 @@ function getMainPosts(){
     try {
         $db= new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = "SELECT * FROM recipe ORDER BY date ";
+        $query = "SELECT * FROM recipe ORDER BY date DESC";
         $result = $db->query($query);
         while($row=$result->fetch(PDO::FETCH_ASSOC)){
+            $query = "SELECT name FROM category
+            INNER JOIN has_category ON category.id = has_category.category
+            WHERE has_category.recipe= ".$row['id'];
+            $category_result = $db->query($query);
+            $categories = '';
+            while($category=$category_result->fetch(PDO::FETCH_ASSOC)){
+                $categories .= '<span class="category">'.$category['name'].'</span>';
+            } 
             $timestamp = strtotime($row['date']);
             $date = date('d-m-Y', $timestamp);
             echo '<div class="recipe-card">
@@ -22,6 +30,8 @@ function getMainPosts(){
                     <div class="card-header"> 
                         <h2 class="recipe-title">'.$row['dishName'].'</h2>
                         <p class="recipe-added">'.$date.'</p>
+                        <p class="recipe-categories">'.$categories.'</p>
+
                     </div>
                     <p class="descriptionRecipe">'.$row['dishDescription'].'</p>';
 
@@ -75,11 +85,11 @@ function getRecipeDetails($recipe_id) {
             <ol class="steps">';
         $steps = explode('.', $recipe_details['steps']);
         foreach ($steps as $step) {
-           echo' <li>' . $step . '</li>';
+        echo' <li>' . $step . '</li>';
         }
-       echo' </ol>
+        echo' </ol>
         </div>
-        <a href="../commun files/generate-pdf.php?recipe_id=' . $recipe_id . '" class="recipe-button">Download PDF</a>';
+        <a href="../commun files/generate-pdf.php?recipe_id=' . $recipe_id . '" class="download_button">Download PDF</a>';
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }

@@ -12,6 +12,10 @@
   <body>
     <header>
       <h1>Yummy Recipe</h1>
+            <form class="search-form" action="searchSignedIn.php" method="POST">
+        <input type="text" name="search" placeholder="Search recipes/categories" />
+        <button type="submit" name="submit-search">Search</button>
+      </form>
       <nav>
         <ul>
           <li><a href="HomeSignedIn.php" class="active">Home</a></li>

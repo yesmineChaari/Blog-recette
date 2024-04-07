@@ -41,7 +41,7 @@ $mysqli->close();
                 <li><a href="homeSignedIn.php" class="active">Home</a></li>
                 <li><a href="contactUsSignedIn.html">Contact Us</a></li>
                 <li><a href="#">View Profile</a></li>
-                <li><a href="logOut.php">Sign Out</a></li>
+                <li><a href="logOut.php">Log Out</a></li>
             </ul>
         </nav>
     </header>

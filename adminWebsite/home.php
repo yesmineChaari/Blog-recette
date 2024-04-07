@@ -12,13 +12,17 @@
   <body>
     <header>
       <h1>Yummy Recipe</h1>
+            <form class="search-form" action="search.php" method="POST">
+        <input type="text" name="search" placeholder="Search recipes/categories" />
+        <button type="submit" name="submit-search">Search</button>
+      </form>
       <nav>
         <ul>
           <li><a href="Home.php" class="active">Home</a></li>
           <li><a href="contactUs.html">Contact Us</a></li>
           <li><a href="viewProfile.php">View Profile</a></li>
           <li><a href="addRecipe.php">Add Recipe</a></li>
-          <li><a href="/signedInWebsite/logOut.php">Log out</a></li>
+          <li><a href="/signedInWebsite/logOut.php">Log Out</a></li>
         </ul>
       </nav>
     </header>
