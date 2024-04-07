@@ -25,7 +25,7 @@
 
     <main>
          <?php
-        require_once("GetRecipesSignedIn.php");
+        require_once("../commun files/GetRecipes.php");
         if(isset($_GET['recipe_id'])) {
             $recipe_id = $_GET['recipe_id'];
             getRecipeDetails($recipe_id);

@@ -1,12 +1,17 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delicious Recipes</title>
-    <link rel="stylesheet" href="/commun files/RecipeCardStyles.css" />
+
     <link rel="stylesheet" href="/commun files/HeaderStyles.css" />
     <link rel="stylesheet" href="/commun files/slideShow.css" />
+    <link rel="stylesheet" href="/commun files/RecipeCardStyles.css" />
     <link rel="stylesheet" href="/commun files/footer.css" />
   </head>
   <body>
@@ -113,7 +118,7 @@
       </div>
     </section>
 <?php
-      require_once("../signedInWebsite/GetRecipesSignedIn.php");
+      require_once("../commun files/GetRecipes.php");
       getMainPosts();
       ?>
 

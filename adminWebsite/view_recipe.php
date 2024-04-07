@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,12 +28,13 @@
 
     <main>
         <?php
-        require_once("../signedInWebsite/GetRecipesSignedIn.php");
+        require_once("../commun files/GetRecipes.php");
         if(isset($_GET['recipe_id'])) {
             $recipe_id = $_GET['recipe_id'];
             getRecipeDetails($recipe_id);
         }
         ?>
+
     </main>
     <footer>
     <div class="footer-container">

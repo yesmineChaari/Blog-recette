@@ -1,4 +1,12 @@
 <?php
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
 $is_invalid = false;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $host = "localhost";
@@ -16,16 +24,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             session_start();
             session_regenerate_id();
             $_SESSION["user_id"] = $user["id"];
-            if ($user["admin"] == 1)
+            $_SESSION["admin"]=$user["admin"];
+            if ($_SESSION["admin"] ==1)
             {
-                header("Location: /adminWebsite/home.php");
+                header("Location: ../adminWebsite/home.php");
+                    debug_to_console("Test");
                 exit;
             }
-            header("Location: /signedInWebsite/homeSignedIn.php");
+            else{
+              header("Location: ../signedInWebsite/homeSignedIn.php");
+                  debug_to_console("Test");
             exit;
+            }
+
         }
     }
     $is_invalid = true;
+
 }
 ?>
 <!DOCTYPE html>
@@ -68,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="password" name="password" id="password">
         </div>
         
-        <button>Log in</button>
+        <button type="submit">Log in</button>
         <a href="signUp.html" class="link">Don't have an account ?Sign up</a>
     </form>
     </div>

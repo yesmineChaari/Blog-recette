@@ -45,9 +45,7 @@ function getSearchPosts(){
                             <div class="card-header"> 
                                 <h2 class="recipe-title">'.$row['dishName'].'</h2>
                                 <p class="recipe-added">'.$date.'</p>
-                                <p class="recipe-categories">'; // Display categories here
-                                
-                // Fetch categories for the recipe
+                                <p class="recipe-categories">';
                 $category_query = "SELECT name FROM category
                                     INNER JOIN has_category ON category.id = has_category.category
                                     WHERE has_category.recipe= ".$row['id'];

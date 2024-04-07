@@ -40,27 +40,27 @@ if (!isset($_SESSION["user_id"])) {
       <form action="add-process.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="name">Recipe name :</label>
-          <input type="text" id="name" name="name" />
+          <input type="text" id="name" name="name" required/>
         </div>
         <div class="form-group">
           <label for="name">Description :</label>
-          <input type="text" id="description" name="description" />
+          <input type="text" id="description" name="description" required />
         </div>
         <div class="form-group">
           <label for="ingredients">Ingredients :</label>
-          <input type="text" id="ingredients" name="ingredients" />
+          <input type="text" id="ingredients" name="ingredients" required/>
         </div>
         <div class="form-group">
           <label for="steps">Steps :</label>
-          <input type="text" id="steps" name="steps" />
+          <input type="text" id="steps" name="steps" required />
         </div>
         <div class="category">
           <label for="categories">Categories :</label>
-          <input type="text" id="categories" name="categories" />
+          <input type="text" id="categories" name="categories" required/>
         </div>
         <div class="form-group">
       <label for="image">Image :</label>
-      <input type="file" id="image" name="image" accept="image/*" />
+      <input type="file" id="image" name="image" accept="image/*" required/>
     </div>
         <button type="submit" name="btn-sent" value="Upload">Submit</button>
       </form>

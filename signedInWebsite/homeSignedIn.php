@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -112,7 +116,9 @@
       </div>
     </section>
 <?php
-      require_once("getRecipesSignedIn.php");
+
+
+      require_once("../commun files/getRecipes.php");
       getMainPosts();
       ?>
 
