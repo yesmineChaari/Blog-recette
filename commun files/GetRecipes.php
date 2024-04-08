@@ -96,7 +96,7 @@ function getRecipeDetails($recipe_id) {
             <h3 class="ingredients_title">Ingredients</h3>
             <ul class="ingredients">';
 
-        $ingredients = explode(',', $recipe_details['ingredients']);
+        $ingredients = explode('.', $recipe_details['ingredients']);
         foreach ($ingredients as $ingredient) {
             echo'<li>' . $ingredient . '</li>';
         }

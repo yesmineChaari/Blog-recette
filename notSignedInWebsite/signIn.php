@@ -1,11 +1,4 @@
 <?php
-function debug_to_console($data) {
-    $output = $data;
-    if (is_array($output))
-        $output = implode(',', $output);
-
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
 
 $is_invalid = false;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -20,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $mysqli->query($sql);
     $user = $result->fetch_assoc();
     if ($user) {
-        if ($_POST["password"] === $user["password"]) {
+        if (password_verify($_POST["password"], $user["password"])) {
             session_start();
             session_regenerate_id();
             $_SESSION["user_id"] = $user["id"];
@@ -28,12 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if ($_SESSION["admin"] ==1)
             {
                 header("Location: ../adminWebsite/home.php");
-                    debug_to_console("Test");
                 exit;
             }
             else{
               header("Location: ../signedInWebsite/homeSignedIn.php");
-                  debug_to_console("Test");
+
             exit;
             }
 

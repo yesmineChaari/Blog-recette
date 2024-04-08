@@ -3,7 +3,7 @@
 session_start(); // Start the session
 
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once("../signedInWebsite/GetRecipesSignedIn.php");
+require_once("GetRecipes.php");
 
 use Dompdf\Dompdf;
 

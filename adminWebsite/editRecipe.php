@@ -43,28 +43,78 @@ try {
     // Handle form submission
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve form data
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $ingredients = $_POST['ingredients'];
-        $date = $_POST['date'];
-        $steps = $_POST['steps'];
-        $image = $_POST['image'];
+        $name = htmlspecialchars($_POST['name']);
+        $description = htmlspecialchars($_POST['description']);
+        $ingredients = htmlspecialchars($_POST['ingredients']);
+        $date = htmlspecialchars($_POST['date']);
+        $steps = htmlspecialchars($_POST['steps']);
+        $categories = htmlspecialchars($_POST['categories']);
 
+
+        // Image validation
+        if ($_FILES['image']['error'] !== 4) { // the admin has the option to not change the image of the recipe
+            $fileName = $_FILES['image']['name']; // name of the file
+            $fileSize = $_FILES['image']['size']; // size in bytes
+            $tempName = $_FILES['image']['tmp_name']; // temporary location
+            $validImageExtension = ['jpg', 'jpeg', 'png']; // allowed types
+            $imageExtension = explode('.', $fileName); // separate name from extension
+            $imageExtension = strtolower(end($imageExtension)); // convert to lowercase
+            if (!in_array($imageExtension, $validImageExtension)) {
+                echo "<script>alert('Image extension not valid');</script>"; // check extension
+            } else if ($fileSize > 1000000) {
+                echo "<script>alert('Image size is too large');</script>"; // check size
+            } else {
+                $newImageName = uniqid() . '.' . $imageExtension; // generate unique id with extension
+                move_uploaded_file($tempName, '../images/' . $newImageName); // store uploaded image
+            }
+        }
+        else {
+            // No new image uploaded, keep the existing image
+            $query = "SELECT dishImage FROM recipe WHERE id = :recipe_id";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(':recipe_id', $recipe_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $newImageName = $row['dishImage'];
+        }
+                // Check if recipe name already exists
+        $check_query = "SELECT id FROM recipe WHERE dishName = :name AND id != :recipe_id";
+        $check_statement = $db->prepare($check_query);
+        $check_statement->bindParam(':name', $name);
+        $check_statement->bindParam(':recipe_id', $recipe_id);
+        $check_statement->execute();
+        if ($check_statement->rowCount() > 0) {
+            echo "<script>alert('Recipe name already exists. Please choose a different name.');</script>";
+            exit; // Exit script if recipe name already exists
+        }
         // Update the recipe in the database
         $update_query = "UPDATE recipe 
-                         SET dishName = :name, dishDescription = :description, 
-                             ingredients = :ingredients, date = :date, 
-                             steps = :steps, dishImage = :image 
-                         WHERE id = :recipe_id";
+                        SET dishName = :name, dishDescription = :description, 
+                        ingredients = :ingredients, date = :date, 
+                        steps = :steps, dishImage = :image 
+                        WHERE id = :recipe_id";
         $update_statement = $db->prepare($update_query);
         $update_statement->bindParam(':name', $name);
         $update_statement->bindParam(':description', $description);
         $update_statement->bindParam(':ingredients', $ingredients);
         $update_statement->bindParam(':date', $date);
         $update_statement->bindParam(':steps', $steps);
-        $update_statement->bindParam(':image', $image);
+        $update_statement->bindParam(':image', $newImageName);
         $update_statement->bindParam(':recipe_id', $recipe_id);
         $update_statement->execute();
+        $delete_categories_query = "DELETE FROM has_category WHERE recipe = :recipe_id";
+        $delete_categories_statement = $db->prepare($delete_categories_query);
+        $delete_categories_statement->bindParam(':recipe_id', $recipe_id);
+        $delete_categories_statement->execute();
+
+        $categoryArray = explode(' ', $categories);
+        foreach ($categoryArray as $category) {
+            $insert_category_query = "INSERT INTO has_category (recipe, category) VALUES (:recipe_id, :category)";
+            $insert_category_statement = $db->prepare($insert_category_query);
+            $insert_category_statement->bindParam(':recipe_id', $recipe_id);
+            $insert_category_statement->bindParam(':category', $category);
+            $insert_category_statement->execute();
+        }
         header("Location: home.php");
 
         // Redirect to the recipe view page after editing
@@ -77,12 +127,21 @@ try {
     $recipe_statement->bindParam(':recipe_id', $recipe_id, PDO::PARAM_INT);
     $recipe_statement->execute();
     $recipe_details = $recipe_statement->fetch(PDO::FETCH_ASSOC);
+                $category_query = "SELECT category FROM has_category WHERE recipe = :recipe_id";
+    $category_statement = $db->prepare($category_query);
+    $category_statement->bindParam(':recipe_id', $recipe_id, PDO::PARAM_INT);
+    $category_statement->execute();
+    $categories_array = [];
+    while ($category_row = $category_statement->fetch(PDO::FETCH_ASSOC)) {
+        $categories_array[] = $category_row['category'];
+    }
+    $existing_categories = implode(' ', $categories_array);
 
     // Display the form to edit the recipe
     echo '
     <div class="container">
       <h1>Edit Recipe</h1>
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="name">Recipe Name :</label>
           <input type="text" id="name" name="name" value="' . $recipe_details['dishName'] . '" required/>
@@ -105,9 +164,14 @@ try {
         </div>
         <div class="form-group">
           <label for="image">Image :</label>
-          <input type="text" id="image" name="image" value="' . $recipe_details['dishImage'] . '"required />
+          <input type="file" id="image" name="image" accept="image/*"/>
         </div>
-        <button type="submit" name="btn-sent">Edit</button>
+        <div class="category">
+          <label for="categories">Categories :</label>
+          <input type="text" id="categories" name="categories" value="' . $existing_categories . '" required/>
+        </div>
+        
+        <button type="submit" name="btn-sent" class="send-btn">Edit</button>
       </form>
     </div>';
 } catch(PDOException $e) {

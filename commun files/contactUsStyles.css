@@ -58,3 +58,6 @@ button:hover {
 label {
   color: #2b4450;
 }
+.send-btn {
+  margin-top: 20px;
+}

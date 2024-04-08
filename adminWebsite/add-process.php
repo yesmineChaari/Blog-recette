@@ -15,7 +15,13 @@ if (isset($_POST['btn-sent'])) {
     $ingredients = mysqli_real_escape_string($mysqli, $_POST['ingredients']);
     $steps = mysqli_real_escape_string($mysqli, $_POST['steps']);
     $categories = mysqli_real_escape_string($mysqli, $_POST['categories']); // Example: breakfast lunch dinner
-
+    $check_query = "SELECT id FROM recipe WHERE dishName = '$name'";
+    $check_result = $mysqli->query($check_query);
+    if ($check_result->num_rows > 0) {
+        echo "<script>alert('Recipe name already exists. Please choose a different name.');</script>";
+        header("Location: addRecipe.php");
+        exit; // Exit script if recipe name already exists
+    }
     if ($_FILES['image']['error'] === 4) {
         echo "<script>alert('image does not exist');</script>";
     } else {
