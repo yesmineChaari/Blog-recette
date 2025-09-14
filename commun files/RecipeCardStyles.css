@@ -1,0 +1,80 @@
+.recipe-title {
+  font-family: Times, serif;
+  font-weight: bolder;
+
+  color: #2b4450;
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 33px;
+}
+
+.recipe-button {
+  color: #c65e31;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  padding-left: 7px;
+}
+
+.recipe-button:hover {
+  color: #497285;
+}
+.recipe-added {
+  margin-top: 4px;
+  font-style: italic;
+  font-weight: 60;
+  font-size: 15px;
+  color: #777;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 25px 300px 10px 300px;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+.descriptionRecipe {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Courier, monospace;
+  color: #0e0e0e;
+}
+.card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-left: 0px;
+}
+.recipe-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+  margin-right: 0px;
+}
+.card-body {
+  margin-left: 30px;
+}
+.image-container {
+  min-width: 200px;
+  max-width: 200px;
+  height: 200px;
+}
+.category {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #dfebed;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}

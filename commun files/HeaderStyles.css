@@ -1,0 +1,104 @@
+body {
+  margin: 0px 100px 0px 100px;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f3efef;
+}
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+header h1 {
+  margin: 0;
+  color: #c65e31;
+  font-family: "Brush Script MT";
+  letter-spacing: 2px;
+  font-size: 45px;
+  font-weight: lighter;
+}
+
+header {
+  background-color: #f3efef;
+  padding: 20px 40px 20px 40px;
+  border-bottom: 1px solid #cdcdcd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 5px; /* Decreased margin to make them closer */
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  color: #2b4450;
+  font-weight: bold;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: right;
+}
+
+nav ul li a {
+  padding: 5px 5px;
+}
+
+nav ul li a:hover {
+  border-color: none;
+  color: #c65e31;
+}
+.search-form {
+  padding-top: 5px;
+}
+.search-form input[type="text"] {
+  border: 1px solid #767676;
+  background-color: #f3efef;
+
+  margin-right: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 300px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.search-form button {
+  background-color: #f3efef;
+  color: #c65e31;
+  border: none;
+
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+.search-form button:hover {
+  color: #2b4450;
+}
